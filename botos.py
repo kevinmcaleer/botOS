@@ -9,9 +9,11 @@ import servo
 
 class Bot():
     name = "MyBot"
+    PWM = ""
+    pinouts = {}
 
     # a collection of servos
-    servos = []
+    servos = {}
 
     def add_servo_controller(self, controller_type):
         if controller_type == "PCA9685":
@@ -36,5 +38,16 @@ class Bot():
                 logging.error(LOG_STRING)
     
     def add_servo(self, servo: servo):
-        self.servos.append(servo)
-
+        """
+        Add Servos and register the pin connections
+        """
+        self.servos[servo.name] = servo
+        self.pinouts[servo.pin] = servo.name
+       
+    def show_pinouts(self):
+        print()
+        print('Pin | Connection')
+        print('-----------------')
+        for keys, values in self.pinouts.items():
+            print (" ", keys, "|", values)
+        print()
