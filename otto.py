@@ -2,6 +2,7 @@
 
 from botos import Bot
 from servo import Servo
+from behaviour import Behaviour
 
 otto = Bot()
 
@@ -22,6 +23,11 @@ otto.add_servo(left_leg)
 otto.add_servo(right_leg)
 
 otto.show_pinouts()
+
+walk = Behaviour()
+walk.add_step('set servo:left_leg angle=90')
+walk.add_step('set servo:left_foot angle=10')
+otto.behaviours.show()
 
 # add rangefinder
 

@@ -7,4 +7,8 @@ class HC-SR04():
     trigger_pin: 1
 
     def distance():
+        range = 0
+
+        return range
+
         

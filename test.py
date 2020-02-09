@@ -10,7 +10,7 @@ smars_bot = Bot()
 smars_bot.name = "SMARS Quad"
 
 # lets add a servo controller
-smars_bot.add_servo_controller(controller_type= "PCA9685")
+smars_bot.add_servo_controller(controller_type="PCA9685")
 
 # lets add some servos to the controller
 left_leg = Servo("Left_Leg")

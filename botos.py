@@ -4,7 +4,7 @@
 import Adafruit_PCA9685
 import logging
 import servo
-
+from behaviour import Behaviour()
 
 
 class Bot():
@@ -12,8 +12,12 @@ class Bot():
     PWM = ""
     pinouts = {}
 
+
     # a collection of servos
     servos = {}
+
+    # a collection of behaviours
+    behaviours = {}
 
     def add_servo_controller(self, controller_type):
         if controller_type == "PCA9685":
