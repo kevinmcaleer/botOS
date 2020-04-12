@@ -4,10 +4,19 @@
 import Adafruit_PCA9685
 import logging
 import servo
-from behaviour import Behaviour()
+from action import Action
 
+# comment out the line below if not using MicroPython
+import machine 
 
 class Bot():
+    
+    '''
+    # Bot class
+
+    Models
+    '''
+
     name = "MyBot"
     PWM = ""
     pinouts = {}
@@ -16,8 +25,8 @@ class Bot():
     # a collection of servos
     servos = {}
 
-    # a collection of behaviours
-    behaviours = {}
+    # a collection of actions
+    actions = {}
 
     def add_servo_controller(self, controller_type):
         if controller_type == "PCA9685":
@@ -49,6 +58,9 @@ class Bot():
         self.pinouts[servo.pin] = servo.name
        
     def show_pinouts(self):
+        '''
+        Lists the currently registered pinouts to the console
+        '''
         print()
         print('Pin | Connection')
         print('-----------------')

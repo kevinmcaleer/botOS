@@ -1,4 +1,4 @@
-class Behaviour():
+class Action():
     steps = {}
     name = ""
     def __init__(self, name=None):
@@ -10,7 +10,7 @@ class Behaviour():
 
     def add_step(self,step):
         ''' 
-        add a new step to the behavior
+        add a new step to the action
         '''
         # self.steps[].append(step)
 

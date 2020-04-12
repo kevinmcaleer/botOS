@@ -1,15 +1,19 @@
 # servo class
 # botOS 
-# import machine
+import machine
 
 class Servo():
     '''
         Models a physical servo 
     '''
 
+    # set the detault angle to the middle position
     angle = 90
     name = "my servo"
-    pin = 1 # the GPIO pin used to control this servo
+    freq = 50
+
+    # the GPIO pin used to control this servo
+    pin = 1 
 
     def __init__(self, name=None, angle=None, pin=None):
         '''
@@ -32,17 +36,26 @@ class Servo():
         else: 
             self.pin = pin
 
+    def angle_to_duty(angle):
+        # 40 = 0 
+        # 77 = 90
+        # 115 = 180
+
+        
+
+        return duty 
+
     def angle(self, angle_a=None):
         '''
-        set the angle of the 
+        set the angle of the servo
         '''
         if angle_a is None:
             print("Angle value is missing")
         else:
             if (angle_a <= 180) and (angle_a >= 0):
                 self.angle = angle_a
-                # self.pwm12 = machine.PWM(p12)
-                # self.pwm12.freq(500)
+                pwm = machine.PWM(self.pin)
+                self.pwm12.freq(self.freq)
                 # self.pwm12.duty(512)
 
             else:
