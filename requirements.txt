@@ -1,0 +1,11 @@
+adafruit-ampy==1.0.7
+Adafruit-GPIO==1.0.3
+Adafruit-PCA9685==1.0.1
+Adafruit-PureIO==1.0.4
+ampy==1.2.6
+Click==7.0
+pyserial==3.4
+python-dotenv==0.11.0
+pyudev==0.22.0
+rshell==0.0.26
+six==1.14.0
