@@ -36,16 +36,20 @@ class Servo():
         else: 
             self.pin = pin
 
-    def angle_to_duty(angle):
+    def angle_to_duty(self, angle):
         # 40 = 0 
         # 77 = 90
         # 115 = 180
-
-        
+        # output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
+        output_start = 40 
+        output_end = 115
+        input_start = 0
+        input_end = 180
+        duty = output_start + ((output_end - output_start) / (input_end - input_start)) * (angle - input_start)
 
         return duty 
 
-    def angle(self, angle_a=None):
+    def set_angle(self, angle_a:None):
         '''
         set the angle of the servo
         '''
@@ -54,9 +58,13 @@ class Servo():
         else:
             if (angle_a <= 180) and (angle_a >= 0):
                 self.angle = angle_a
-                pwm = machine.PWM(self.pin)
-                self.pwm12.freq(self.freq)
+                m_pin = machine.Pin(5)
+                pwm = machine.PWM(m_pin)
+                pwm.freq(self.freq)
                 # self.pwm12.duty(512)
+                
+                duty = int(self.angle_to_duty(angle_a))
+                pwm.duty(duty)
 
             else:
                 print("that angle is either less than 0 or greater than 180")
