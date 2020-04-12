@@ -10,11 +10,9 @@ from action import Action
 import machine 
 
 class Bot():
-    
     '''
     # Bot class
-
-    Models
+    Models a robot
     '''
 
     name = "MyBot"
