@@ -2,7 +2,7 @@
 title: Welcome
 ---
 
-{% include item.navigation %}
+{% include navigation.html %}
 ## Welcome
 
 Welcome To Bot-OS.com home of the MicroPython robot OS Framework.
