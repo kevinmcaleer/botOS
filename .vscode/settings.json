@@ -1,3 +1,7 @@
 {
     "python.pythonPath": "venv/bin/python"
 }
+
+{
+    "cornflakes.linter.executePath": "/Users/kev/Documents/Python/botOS/venv/bin/flake8"
+}
