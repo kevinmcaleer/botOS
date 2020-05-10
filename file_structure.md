@@ -10,13 +10,12 @@
 |- machine.py           | The MicroPython machine library stubb file
 |- main.py              | 
 |- object_view.py       | 
-|- otto.py              | Otto DIY example
-|- range_finder.py      | Range finder class
-|- README.md            | Read Me file
-|- requirements.txt     | Pip install files - use `pip install -r requirements.txt` to install
-|- servo.py             | The Servo class
-|- test_servo.py        | Servo unit test
+|- otto.py              | 
+|- range_finder.py      | 
+|- README.md            | 
+|- requirements.txt     | 
+|- servo.py             | 
+|- 
 |- test.py              | test harness
-|- TODO.md              | old TODO file 
 |- .gitignore           | Git Ignore file
 ```
