@@ -2,6 +2,8 @@
 
 class Pin():
 
+    OUT = 1
+
     def __init__(self, value):
         print ('created Pin', value)
 
