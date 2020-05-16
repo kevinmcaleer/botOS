@@ -1,5 +1,6 @@
 # botOS
 # Kevin McAleer February 2020
+# Kevin McAleer May 2020
 
 import Adafruit_PCA9685
 import logging
@@ -18,7 +19,6 @@ class Bot():
     name = "MyBot"
     PWM = ""
     pinouts = {}
-
 
     # a collection of servos
     servos = {}
