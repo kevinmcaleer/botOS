@@ -1,6 +1,6 @@
 # Motor class
 # botOS 
-from machine import PWM, Pin
+from .machine import PWM, Pin
 from time import sleep
 
 class Motor():
@@ -24,6 +24,8 @@ class Motor():
             motor_pin = 1
         if speed is None:
             speed = 0
+        self.motor_pin = motor_pin
+        self.motor_speed = speed
         print("Motor Pin is:", self.motor_pin)
         # self.speed_pin = PWM(Pin(motor_pin))
         self.motor = Pin(motor_pin, Pin.OUT)
@@ -31,13 +33,14 @@ class Motor():
     def speed(self, value=None):
         if value is None:
             print (self.motor_speed)
-            return self.motor_speed
+            
         else:
             if (value >= 0) and (value <= 100):
                 self.motor_speed = value
                 self.speed_pin.freq(1000)
                 self.speed_pin.duty(self.motor_speed)
-    
+        return self.motor_speed
+
     def on(self):
         self.motor.on()
         print('Motor On')

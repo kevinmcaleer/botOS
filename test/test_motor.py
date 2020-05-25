@@ -1,7 +1,8 @@
 # Kevin McAleer May 2020
 
-from motor import Motor
-from machine import Pin
+import botos
+from botos.motor import Motor
+from botos.machine import Pin
 from time import sleep
 import unittest
 
@@ -46,7 +47,7 @@ class test_motor(unittest.TestCase):
         speed = 40
         p1 = Motor(pin, speed)   
         self.assertEqual(p1.motor_pin, pin)
-        self.assertEqual(p1.motor_speed, speed * 100) 
+        self.assertEqual(p1.motor_speed, speed) 
 
 if __name__ == '__main__':
     do_test()

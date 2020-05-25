@@ -4,8 +4,14 @@ class Pin():
 
     OUT = 1
 
-    def __init__(self, value):
-        print ('created Pin', value)
+    def __init__(self, value, pin_type):
+        print ('created Pin', value, pin_type)
+
+    def on(self):
+        print("pin on")
+        
+    def off(self):
+        print("pin off")
 
 class PWM():
 
