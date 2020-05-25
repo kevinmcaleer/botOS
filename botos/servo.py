@@ -1,6 +1,6 @@
 # servo class
 # botOS 
-import machine
+from .machine import Pin, PWM
 
 class Servo():
     '''
@@ -58,8 +58,8 @@ class Servo():
         else:
             if (angle_a <= 180) and (angle_a >= 0):
                 self.angle = angle_a
-                m_pin = machine.Pin(5)
-                pwm = machine.PWM(m_pin)
+                m_pin = Pin(5)
+                pwm = PWM(m_pin)
                 pwm.freq(self.freq)
                 # self.pwm12.duty(512)
                 
