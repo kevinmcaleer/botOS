@@ -6,8 +6,14 @@ from time import sleep
 class Motor():
     '''
     Motor Model
+    Motors have 2 pins - one controls the direction, the other controls the speed
+
     '''
+
+    # motor_pin - controls the speed
     motor_pin = 0
+
+    # motor_direction_pin - controls the direction of the motor
     motor_direction_pin = 0
 
     # a speed value between 0 and 100
@@ -18,7 +24,8 @@ class Motor():
             motor_pin = 1
         if speed is None:
             speed = 0
-        self.speed_pin = PWM(Pin(motor_pin))
+        print("Motor Pin is:", self.motor_pin)
+        # self.speed_pin = PWM(Pin(motor_pin))
         self.motor = Pin(motor_pin, Pin.OUT)
                 
     def speed(self, value=None):
