@@ -21,3 +21,14 @@ class PWM():
         print('duty')
         self.pduty = value 
         return value 
+
+class ADC():
+
+    # fake ADC to Digital convertor
+    pin = 0
+
+    def __init__(self, pin):
+        self.pin = pin
+
+    def read(self):
+        return 1024
