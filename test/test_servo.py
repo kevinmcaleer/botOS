@@ -1,16 +1,17 @@
 import unittest
-import servo
+import botos
+from botos.servo import Servo
 
 class TestServo(unittest.TestCase):
 
     def test_servo_create(self):
-        s = servo.Servo()
+        s = Servo()
         result = s.pin
         self.assertTrue(result == 1)
 
     def test_set_angle(self):
         print('** test_set_angle **')
-        s = servo.Servo()
+        s = Servo()
         a = s.angle
         print('before angle:', a)
         s.set_angle(100)
