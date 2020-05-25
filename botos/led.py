@@ -1,6 +1,6 @@
 # led class
 # botOS 
-from machine import PWM, Pin
+from .machine import PWM, Pin
 
 class LED():
 
@@ -30,7 +30,7 @@ class LED():
             pin = 15
         p = PWM(Pin(pin))
         p.freq(1000)
-        P.duty(500)
+        p.duty(500)
        
         
     def bright(self):
@@ -38,7 +38,7 @@ class LED():
             pin = 15
         p = PWM(Pin(pin))
         p.freq(1000)
-        P.duty(1000)
+        p.duty(1000)
 
     def set_brightness(self, value):
         # check value is between 0 and 100
@@ -47,3 +47,24 @@ class LED():
             self.p.duty(self.brightness)
         else:
             print("Brightness is either less than 0 or higher than 100, please use a percentage")        
+        
+    def on(self):
+        self.set_brightness(100)
+
+    def off(self):
+        self.set_brightness(0)
+
+    def is_on(self):
+        if self.brightness > 0:
+            return True
+        else:
+            return False    
+
+    def is_off(self):
+        if self.brightness == 0:
+            return True
+        else: 
+            return False
+
+    def level(self):
+        return self.brightness 
